@@ -16,28 +16,23 @@ class SignInPage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(16.0),
       child: Column(
+        // centers the buttons across the main Axis
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            color: Colors.orange,
-            child: SizedBox(
-              height: 100.0,
+          Text(
+            'Sign In',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 32.0,
+              fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(height: 8.0),
-          Container(
-            color: Colors.red,
-            child: SizedBox(
-              height: 100.0,
-            ),
-          ),
-          SizedBox(height: 8.0),
-          Container(
-            color: Colors.purple,
-            child: SizedBox(
-              height: 100.0,
-            ),
-          ),
+          RaisedButton(
+            child: Text('Log in with Google'),
+            onPressed: () {},
+          )
         ],
       ),
     );
