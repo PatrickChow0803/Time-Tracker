@@ -6,6 +6,21 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Time Tracker")),
+        elevation: 2.0,
+      ),
+      body: Container(
+        color: Colors.yellow,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              color: Colors.orange,
+              child: SizedBox(
+                height: 100.0,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
