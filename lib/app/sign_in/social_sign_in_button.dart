@@ -3,12 +3,16 @@ import 'package:time_tracker_flutter_course/common_widgets/custom_raised_button.
 
 class SocialSignInButton extends CustomRaisedButton {
   SocialSignInButton({
-    String assetName,
-    String text,
+    @required String assetName,
+    @required String text,
     Color color,
     Color textColor,
     VoidCallback onPressed,
-  }) : super(
+    //assertions:useful runtime checks to highlight programming errors
+    // assert makes it so that if the boolean condition is false, stop execution.
+  })  : assert(assetName != null),
+        assert(text != null),
+        super(
           child: Row(
               // Use spaceBetween to have the widgets have proper spacing.
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
