@@ -6,10 +6,16 @@ import 'package:time_tracker_flutter_course/common_widgets/custom_raised_button.
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
+  // Custom callback
+  // onSignIn is a function with an argument type of User
+  final Function(User) onSignIn;
+  SignInPage({@required this.onSignIn});
+
   Future<void> signInAnonymously() async {
     try {
       final authResult = await FirebaseAuth.instance.signInAnonymously();
-      print('${authResult.user.uid}');
+      // Calls the callback
+      onSignIn(authResult.user);
     } catch (e) {
       print(e.toString());
     }
