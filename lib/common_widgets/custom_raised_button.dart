@@ -17,15 +17,16 @@ class CustomRaisedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
-      child: RaisedButton(
+      child: ElevatedButton(
+//        style: ButtonStyle(elevation: MaterialStateProperty<double>),
+        style: ElevatedButton.styleFrom(
+          elevation: 5,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
+          primary: color,
+          onSurface: Colors.blue[700],
+        ),
         child: child,
         onPressed: onPressed,
-        color: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(borderRadius),
-          ),
-        ),
       ),
     );
   }
