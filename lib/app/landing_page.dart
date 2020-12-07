@@ -18,7 +18,8 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   void _checkCurrentUser() {
-    _updateUser(FirebaseAuth.instance.currentUser);
+    User user = FirebaseAuth.instance.currentUser;
+    _updateUser(user);
   }
 
   void _updateUser(User user) {
